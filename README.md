@@ -46,7 +46,7 @@ Spring Boot provide a way to start Java applications quickly and simply, through
 1. The class `SpringApplication` – starting a Spring context and the embedded server,
 2. The class with  `@Configuration` annotation indicate to the framework that it is a  configuration(application context class) class.
 3. `@EnableAutoConfiguration` -  Enable auto-configuration of the Spring Application Context, attempting to guess and configure beans that you are likely to need.
-4.`SpringApplication`  is started through `com.cybage.timesheet.Application` as configured in `build.gradle` when we run `gradlew bootRun`
+4.`SpringApplication`  is started through `com.bachpan.Application` as configured in `build.gradle` when we run `gradlew bootRun`
 
 ##Web layer
 1. Because we are using spring boot, we will not have any web.xml, request will be directly served to controller `@controller` based on url mapping as below
