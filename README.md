@@ -43,6 +43,7 @@ README for schoolAPP
 
 ##Bootstraping the server
 Spring Boot provide a way to start Java applications quickly and simply, through an embedded server – by default it used an embedded version of Tomcat. With Spring Boot, we can expose components such as REST services independently.
+
 1. The class `SpringApplication` – starting a Spring context and the embedded server,
 2. The class with  `@Configuration` annotation indicate to the framework that it is a  configuration(application context class) class.
 3. `@EnableAutoConfiguration` -  Enable auto-configuration of the Spring Application Context, attempting to guess and configure beans that you are likely to need.
