@@ -58,4 +58,4 @@ Spring Boot provide a way to start Java applications quickly and simply, through
 2. Application use Spring data JPA for repository, so you just need to inject the Repository interface, it will automatically implement the interface on the fly based on properties available.
 
 ##Entity Diagram
-![Alt text](design/EventApp_V1?raw=true "Entity Diagram")
+![Alt text](design/EventApp_V1.svg?raw=true "Event App")
