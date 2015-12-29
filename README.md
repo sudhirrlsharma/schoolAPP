@@ -56,4 +56,5 @@ Spring Boot provide a way to start Java applications quickly and simply, through
 ### Connection management  
 1. Connection properties are configured in  `application-dev.yml`, which will be consumed in `DatabaseConfiguration.java`
 2. Application use Spring data JPA for repository, so you just need to inject the Repository interface, it will automatically implement the interface on the fly based on properties available.
-
+##Entity Diagram
+![Alt text](image/EventApp_v1.svg?raw=true "Entity Diagram")
