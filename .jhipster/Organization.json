@@ -1,0 +1,29 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "parentOrg",
+            "otherEntityName": "organization",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "organization"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "orgType",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20151230130235",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "pagination": "infinite-scroll"
+}

@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myContectLabel">Create or edit a Contect</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="contect.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="contect.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_phone">Phone</label>
+            <input type="text" class="form-control" name="phone" id="field_phone"
+                    ng-model="contect.phone"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="contect.email"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_im">Im</label>
+            <input type="text" class="form-control" name="im" id="field_im"
+                    ng-model="contect.im"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_address1">Address1</label>
+            <input type="text" class="form-control" name="address1" id="field_address1"
+                    ng-model="contect.address1"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_adress2">Adress2</label>
+            <input type="text" class="form-control" name="adress2" id="field_adress2"
+                    ng-model="contect.adress2"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="contect.city"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_state">State</label>
+            <input type="text" class="form-control" name="state" id="field_state"
+                    ng-model="contect.state"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                    ng-model="contect.country"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pinCode">PinCode</label>
+            <input type="text" class="form-control" name="pinCode" id="field_pinCode"
+                    ng-model="contect.pinCode"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

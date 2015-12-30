@@ -1,0 +1,15 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20151230132940",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}
