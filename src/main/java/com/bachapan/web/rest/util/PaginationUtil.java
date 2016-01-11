@@ -63,4 +63,8 @@ public class PaginationUtil {
         headers.add(HttpHeaders.LINK, link);
         return headers;
     }
+    
+    public static HttpHeaders generatePaginationHttpHeaders(Page<?> page, String baseUrl) throws URISyntaxException{
+    	 return generatePaginationHttpHeaders(page, baseUrl, null, null);
+    }
 }

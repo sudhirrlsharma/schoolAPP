@@ -26,5 +26,8 @@ public class HeaderUtil {
     public static HttpHeaders createEntityDeletionAlert(String entityName, String param) {
         return createAlert("schoolappApp." + entityName + ".deleted", param);
     }
+    public static HttpHeaders createFailureAlert(String entityName, String param, String errorMessage) {
+        return createAlert("schoolappApp." + entityName + ".failed", param);
+    }
 
 }

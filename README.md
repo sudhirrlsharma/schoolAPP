@@ -9,7 +9,7 @@ README for schoolAPP
 	`gradle eclipse`
 2. To build this project run below command
 	`gradle build`
-3. to start the  front end  and backend both server run below command
+3. to start the  front end  and back-end both server run below command
 	`gradlew bootRun`
 
 ##Setup you project - frondEnd

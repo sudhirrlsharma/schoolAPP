@@ -6,6 +6,8 @@ import com.bachapan.repository.ContectRepository;
 import com.bachapan.repository.search.ContectSearchRepository;
 import com.bachapan.web.rest.dto.ContectDTO;
 import com.bachapan.web.rest.mapper.ContectMapper;
+
+import org.elasticsearch.index.query.QueryBuilders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -14,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -94,7 +97,7 @@ public class ContectServiceImpl implements ContectService{
         
         log.debug("REST request to search Contects for query {}", query);
         return StreamSupport
-            .stream(contectSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .stream(contectSearchRepository.search(queryString(query)).spliterator(), false)
             .map(contectMapper::contectToContectDTO)
             .collect(Collectors.toList());
     }

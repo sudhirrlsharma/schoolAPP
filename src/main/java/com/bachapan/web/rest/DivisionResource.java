@@ -130,7 +130,7 @@ public class DivisionResource {
     public List<Division> searchDivisions(@PathVariable String query) {
         log.debug("REST request to search Divisions for query {}", query);
         return StreamSupport
-            .stream(divisionSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .stream(divisionSearchRepository.search(queryString(query)).spliterator(), false)
             .collect(Collectors.toList());
     }
 }

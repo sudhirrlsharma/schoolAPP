@@ -92,7 +92,7 @@ public class ContectResource {
         throws URISyntaxException {
         log.debug("REST request to get a page of Contects");
         Page<Contect> page = contectService.findAll(pageable); 
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/contects");
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/contects",10,20);
         return new ResponseEntity<>(page.getContent().stream()
             .map(contectMapper::contectToContectDTO)
             .collect(Collectors.toCollection(LinkedList::new)), headers, HttpStatus.OK);

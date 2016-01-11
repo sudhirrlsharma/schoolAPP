@@ -94,7 +94,7 @@ public class UserAccountServiceImpl implements UserAccountService{
         
         log.debug("REST request to search UserAccounts for query {}", query);
         return StreamSupport
-            .stream(userAccountSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .stream(userAccountSearchRepository.search(queryString(query)).spliterator(), false)
             .map(userAccountMapper::userAccountToUserAccountDTO)
             .collect(Collectors.toList());
     }
