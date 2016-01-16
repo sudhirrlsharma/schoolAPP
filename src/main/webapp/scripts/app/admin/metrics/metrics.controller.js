@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .controller('MetricsController', function ($scope, MonitoringService, $modal) {
         $scope.metrics = {};
         $scope.updatingMetrics = true;

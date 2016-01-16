@@ -12,27 +12,27 @@
             overflowToDisk="false"
             />
 
-    <cache name="com.bachapan.domain.User"
+    <cache name="com.bachpan.school.domain.User"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.bachapan.domain.Authority"
+    <cache name="com.bachpan.school.domain.Authority"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.bachapan.domain.User.authorities"
+    <cache name="com.bachpan.school.domain.User.authorities"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.bachapan.domain.PersistentToken"
+    <cache name="com.bachpan.school.domain.PersistentToken"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.bachapan.domain.User.persistentTokens"
+    <cache name="com.bachpan.school.domain.User.persistentTokens"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.bachapan.domain.PersistentAuditEvent"
+    <cache name="com.bachpan.school.domain.PersistentAuditEvent"
            timeToLiveSeconds="3600">
     </cache>
 </ehcache>

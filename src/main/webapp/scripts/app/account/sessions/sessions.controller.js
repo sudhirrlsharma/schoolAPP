@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .controller('SessionsController', function ($scope, Sessions, Principal) {
         Principal.identity().then(function(account) {
             $scope.account = account;

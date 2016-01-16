@@ -1,8 +1,8 @@
 /* globals $ */
 'use strict';
 
-angular.module('schoolappApp')
-    .directive('schoolappAppPagination', function() {
+angular.module('bachpanApp')
+    .directive('bachpanAppPagination', function() {
         return {
             templateUrl: 'scripts/components/form/pagination.html'
         };

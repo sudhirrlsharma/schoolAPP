@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp', ['LocalStorageModule', 
+angular.module('bachpanApp', ['LocalStorageModule', 
                'ui.bootstrap', // for modal dialogs
     'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'ngFileUpload', 'infinite-scroll'])
 
@@ -18,7 +18,7 @@ angular.module('schoolappApp', ['LocalStorageModule',
         });
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
-            var titleKey = 'schoolAPP' ;
+            var titleKey = 'bachpan' ;
 
             $rootScope.previousStateName = fromState.name;
             $rootScope.previousStateParams = fromParams;

@@ -16,7 +16,7 @@ spring:
         password: 
 
     jpa:
-        database-platform: com.bachapan.domain.util.FixedH2Dialect
+        database-platform: com.bachpan.school.domain.util.FixedH2Dialect
         database: H2
         openInView: false
         show_sql: true
@@ -29,14 +29,6 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
             hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
-    data:
-        elasticsearch:
-            cluster-name:
-            cluster-nodes:
-            properties:
-                path:
-                  logs: target/elasticsearch/log
-                  data: target/elasticsearch/data 
     messages:
         cache-seconds: 1
     thymeleaf:
@@ -53,7 +45,7 @@ metrics:
         enabled: false
         host: localhost
         port: 2003
-        prefix: schoolAPP
+        prefix: bachpan
 
 cache:
     timeToLiveSeconds: 3600

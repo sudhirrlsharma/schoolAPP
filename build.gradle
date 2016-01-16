@@ -16,14 +16,13 @@ targetCompatibility=1.8
 apply plugin: 'maven'
 apply plugin: 'spring-boot'
 apply plugin: 'war'
-apply plugin: 'eclipse'
 
 bootRepackage {
-   mainClass = 'com.bachapan.Application'
+   mainClass = 'com.bachpan.school.Application'
 }
 
 springBoot {
-    mainClass = 'com.bachapan.Application'
+    mainClass = 'com.bachpan.school.Application'
 }
 
 bootRun {
@@ -46,7 +45,7 @@ if (project.hasProperty('prod')) {
   apply from: 'profile_dev.gradle'
 }
 
-group = 'com.bachapan'
+group = 'com.bachpan.school'
 version = '0.1-SNAPSHOT'
 
 description = ''
@@ -110,7 +109,6 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-logging'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web') {
         exclude module: 'spring-boot-starter-tomcat'

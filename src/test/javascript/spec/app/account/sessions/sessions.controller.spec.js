@@ -2,7 +2,7 @@
 
 describe('Controllers Tests ', function () {
 
-    beforeEach(module('schoolappApp'));
+    beforeEach(module('bachpanApp'));
 
     describe('SessionsController', function () {
         var $scope, SessionsService;

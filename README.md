@@ -2,6 +2,7 @@ README for schoolAPP
 ==========================
 
 #Setup you project
+refer: http://jhipster.github.io/creating_an_app.html
 
 ##Setup you project - Backend
 
@@ -57,6 +58,9 @@ Spring Boot provide a way to start Java applications quickly and simply, through
 ### Connection management  
 1. Connection properties are configured in  `application-dev.yml`, which will be consumed in `DatabaseConfiguration.java`
 2. Application use Spring data JPA for repository, so you just need to inject the Repository interface, it will automatically implement the interface on the fly based on properties available.
+
+##Secutiy
+refer:http://jhipster.github.io/security.html
 
 ##Entity Diagram
 ![Alt text](design/EventApp_V1.svg "Event App")

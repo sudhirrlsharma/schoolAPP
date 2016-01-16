@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .service('ParseLinks', function () {
         this.parse = function (header) {
             if (header.length == 0) {

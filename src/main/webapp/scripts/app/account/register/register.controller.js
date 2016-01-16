@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .controller('RegisterController', function ($scope, $timeout, Auth) {
         $scope.success = null;
         $scope.error = null;

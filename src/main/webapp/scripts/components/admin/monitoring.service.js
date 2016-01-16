@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .factory('MonitoringService', function ($rootScope, $http) {
         return {
             getMetrics: function () {

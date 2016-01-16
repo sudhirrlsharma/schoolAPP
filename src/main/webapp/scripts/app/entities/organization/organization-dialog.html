@@ -7,31 +7,38 @@
         <h4 class="modal-title" id="myOrganizationLabel">Create or edit a Organization</h4>
     </div>
     <div class="modal-body">
-        <jh-alert-error></jh-alert-error>
         <div class="form-group">
             <label for="id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                    ng-model="organization.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="field_name">Name</label>
-            <input type="text" class="form-control" name="name" id="field_name"
-                    ng-model="organization.name"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="field_orgType">OrgType</label>
-            <input type="text" class="form-control" name="orgType" id="field_orgType"
-                    ng-model="organization.orgType"
-                     />
+                    ng-model="organization.id" readonly>
         </div>
 
+        <div class="form-group">
+            <label for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="organization.name"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="organization.type"
+                    >
+
+        </div>
+
+        <div class="form-group">
+            <label for="field_parentOrg">parentOrg</label>
+            <select class="form-control" id="field_parentOrg" name="parentOrg" ng-model="organization.parentOrg.id" ng-options="organization.id as organization.name for organization in organizations">
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
             <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
         </button>
     </div>

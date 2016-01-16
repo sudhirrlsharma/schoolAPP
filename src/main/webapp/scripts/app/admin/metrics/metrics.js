@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('metrics', {

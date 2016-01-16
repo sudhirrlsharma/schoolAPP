@@ -6,7 +6,7 @@ security.basic.enabled: false
 endpoints.jolokia.enabled: false
 
 # security configuration (this key should be unique for your application, and kept secret)
-jhipster.security.rememberme.key: 0b5a2ab1820ad477af4224f2d73578923a6652ba
+jhipster.security.rememberme.key: 03129fa8a465511cddba35dfb2c45334eaa9d8a0
 
 async:
     corePoolSize: 2
@@ -21,12 +21,12 @@ mail:
     protocol: smtp
     tls: false
     auth: false
-    from: schoolAPP@localhost
+    from: bachpan@localhost
 
 
 swagger:
-    title: schoolAPP API
-    description: schoolAPP applications and beyond!
+    title: bachpan API
+    description: bachpan applications and beyond!
     version: 0.0.1
     termsOfServiceUrl: http://jhipster.github.io/
     contact:

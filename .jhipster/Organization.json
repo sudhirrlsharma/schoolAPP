@@ -2,10 +2,17 @@
     "relationships": [
         {
             "relationshipId": 1,
-            "relationshipName": "parentOrg",
+            "relationshipName": "childOrg",
             "otherEntityName": "organization",
             "relationshipType": "one-to-many",
-            "otherEntityRelationshipName": "organization"
+            "otherEntityRelationshipName": "parentOrg"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "parentOrg",
+            "otherEntityName": "organization",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
         }
     ],
     "fields": [
@@ -17,13 +24,11 @@
         },
         {
             "fieldId": 2,
-            "fieldName": "orgType",
-            "fieldType": "String",
-            "fieldValidateRules": []
+            "fieldName": "type",
+            "fieldType": "String"
         }
     ],
-    "changelogDate": "20151230130235",
+    "changelogDate": "20160116052336",
     "dto": "mapstruct",
-    "service": "serviceImpl",
     "pagination": "infinite-scroll"
 }

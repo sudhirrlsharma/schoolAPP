@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('schoolAPPApp').controller('OrganizationDialogController',
-    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Organization',
-        function($scope, $stateParams, $uibModalInstance, entity, Organization) {
+angular.module('bachpanApp').controller('OrganizationDialogController',
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Organization',
+        function($scope, $stateParams, $modalInstance, entity, Organization) {
 
         $scope.organization = entity;
         $scope.organizations = Organization.query();
@@ -12,26 +12,20 @@ angular.module('schoolAPPApp').controller('OrganizationDialogController',
             });
         };
 
-        var onSaveSuccess = function (result) {
-            $scope.$emit('schoolAPPApp:organizationUpdate', result);
-            $uibModalInstance.close(result);
-            $scope.isSaving = false;
-        };
-
-        var onSaveError = function (result) {
-            $scope.isSaving = false;
+        var onSaveFinished = function (result) {
+            $scope.$emit('bachpanApp:organizationUpdate', result);
+            $modalInstance.close(result);
         };
 
         $scope.save = function () {
-            $scope.isSaving = true;
             if ($scope.organization.id != null) {
-                Organization.update($scope.organization, onSaveSuccess, onSaveError);
+                Organization.update($scope.organization, onSaveFinished);
             } else {
-                Organization.save($scope.organization, onSaveSuccess, onSaveError);
+                Organization.save($scope.organization, onSaveFinished);
             }
         };
 
         $scope.clear = function() {
-            $uibModalInstance.dismiss('cancel');
+            $modalInstance.dismiss('cancel');
         };
 }]);

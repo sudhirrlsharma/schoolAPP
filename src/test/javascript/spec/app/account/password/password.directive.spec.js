@@ -2,7 +2,7 @@
 
 describe('Directive Tests ', function () {
 
-    beforeEach(module('schoolappApp'));
+    beforeEach(module('bachpanApp'));
 
     var elm, scope, $httpBackend;
 

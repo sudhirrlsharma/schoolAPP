@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .directive('jhAlertToast', function(AlertService, $rootScope) {
 		return {
             restrict: 'E',
@@ -11,7 +11,7 @@ angular.module('schoolappApp')
 	            function($scope) {
 	                $scope.alerts = AlertService.get();
 
-					var cleanHttpErrorListener = $rootScope.$on('schoolappApp.httpError', function (event, httpResponse) {
+					var cleanHttpErrorListener = $rootScope.$on('bachpanApp.httpError', function (event, httpResponse) {
 					    var i;
 
 					    switch (httpResponse.status) {

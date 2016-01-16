@@ -1,14 +1,11 @@
 'use strict';
 
-angular.module('schoolAPPApp')
-    .controller('OrganizationController', function ($scope, $state, Organization, OrganizationSearch, ParseLinks) {
-
+angular.module('bachpanApp')
+    .controller('OrganizationController', function ($scope, Organization, ParseLinks) {
         $scope.organizations = [];
-        $scope.predicate = 'id';
-        $scope.reverse = true;
-        $scope.page = 0;
+        $scope.page = 1;
         $scope.loadAll = function() {
-            Organization.query({page: $scope.page, size: 20, sort: [$scope.predicate + ',' + ($scope.reverse ? 'asc' : 'desc'), 'id']}, function(result, headers) {
+            Organization.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
                 for (var i = 0; i < result.length; i++) {
                     $scope.organizations.push(result[i]);
@@ -16,7 +13,7 @@ angular.module('schoolAPPApp')
             });
         };
         $scope.reset = function() {
-            $scope.page = 0;
+            $scope.page = 1;
             $scope.organizations = [];
             $scope.loadAll();
         };
@@ -26,15 +23,20 @@ angular.module('schoolAPPApp')
         };
         $scope.loadAll();
 
-
-        $scope.search = function () {
-            OrganizationSearch.query({query: $scope.searchQuery}, function(result) {
-                $scope.organizations = result;
-            }, function(response) {
-                if(response.status === 404) {
-                    $scope.loadAll();
-                }
+        $scope.delete = function (id) {
+            Organization.get({id: id}, function(result) {
+                $scope.organization = result;
+                $('#deleteOrganizationConfirmation').modal('show');
             });
+        };
+
+        $scope.confirmDelete = function (id) {
+            Organization.delete({id: id},
+                function () {
+                    $scope.reset();
+                    $('#deleteOrganizationConfirmation').modal('hide');
+                    $scope.clear();
+                });
         };
 
         $scope.refresh = function () {
@@ -43,10 +45,6 @@ angular.module('schoolAPPApp')
         };
 
         $scope.clear = function () {
-            $scope.organization = {
-                name: null,
-                orgType: null,
-                id: null
-            };
+            $scope.organization = {name: null, type: null, id: null};
         };
     });

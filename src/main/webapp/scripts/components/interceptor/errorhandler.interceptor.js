@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .factory('errorHandlerInterceptor', function ($q, $rootScope) {
         return {
             'responseError': function (response) {
                 if (!(response.status == 401 && response.data.path.indexOf("/api/account") == 0 )){
-	                $rootScope.$emit('schoolappApp.httpError', response);
+	                $rootScope.$emit('bachpanApp.httpError', response);
 	            }
                 return $q.reject(response);
             }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolAPPApp')
+angular.module('bachpanApp')
     .controller('OrganizationDetailController', function ($scope, $rootScope, $stateParams, entity, Organization) {
         $scope.organization = entity;
         $scope.load = function (id) {
@@ -8,9 +8,7 @@ angular.module('schoolAPPApp')
                 $scope.organization = result;
             });
         };
-        var unsubscribe = $rootScope.$on('schoolAPPApp:organizationUpdate', function(event, result) {
+        $rootScope.$on('bachpanApp:organizationUpdate', function(event, result) {
             $scope.organization = result;
         });
-        $scope.$on('$destroy', unsubscribe);
-
     });

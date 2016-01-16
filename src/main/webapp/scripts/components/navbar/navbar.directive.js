@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .directive('activeLink', function(location) {
         return {
             restrict: 'A',

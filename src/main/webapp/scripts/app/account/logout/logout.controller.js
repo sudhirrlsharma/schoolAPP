@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .controller('LogoutController', function (Auth) {
         Auth.logout();
     });

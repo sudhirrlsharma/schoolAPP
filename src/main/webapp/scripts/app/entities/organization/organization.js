@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('schoolAPPApp')
+angular.module('bachpanApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('organization', {
                 parent: 'entity',
                 url: '/organizations',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    roles: ['ROLE_USER'],
                     pageTitle: 'Organizations'
                 },
                 views: {
@@ -23,7 +23,7 @@ angular.module('schoolAPPApp')
                 parent: 'entity',
                 url: '/organization/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    roles: ['ROLE_USER'],
                     pageTitle: 'Organization'
                 },
                 views: {
@@ -42,20 +42,16 @@ angular.module('schoolAPPApp')
                 parent: 'organization',
                 url: '/new',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    roles: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                    $uibModal.open({
+                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
+                    $modal.open({
                         templateUrl: 'scripts/app/entities/organization/organization-dialog.html',
                         controller: 'OrganizationDialogController',
                         size: 'lg',
                         resolve: {
                             entity: function () {
-                                return {
-                                    name: null,
-                                    orgType: null,
-                                    id: null
-                                };
+                                return {name: null, type: null, id: null};
                             }
                         }
                     }).result.then(function(result) {
@@ -69,36 +65,13 @@ angular.module('schoolAPPApp')
                 parent: 'organization',
                 url: '/{id}/edit',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    roles: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                    $uibModal.open({
+                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
+                    $modal.open({
                         templateUrl: 'scripts/app/entities/organization/organization-dialog.html',
                         controller: 'OrganizationDialogController',
                         size: 'lg',
-                        resolve: {
-                            entity: ['Organization', function(Organization) {
-                                return Organization.get({id : $stateParams.id});
-                            }]
-                        }
-                    }).result.then(function(result) {
-                        $state.go('organization', null, { reload: true });
-                    }, function() {
-                        $state.go('^');
-                    })
-                }]
-            })
-            .state('organization.delete', {
-                parent: 'organization',
-                url: '/{id}/delete',
-                data: {
-                    authorities: ['ROLE_USER'],
-                },
-                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                    $uibModal.open({
-                        templateUrl: 'scripts/app/entities/organization/organization-delete-dialog.html',
-                        controller: 'OrganizationDeleteController',
-                        size: 'md',
                         resolve: {
                             entity: ['Organization', function(Organization) {
                                 return Organization.get({id : $stateParams.id});

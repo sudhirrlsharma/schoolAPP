@@ -4,7 +4,7 @@ server:
 
 
 # security configuration (this key should be unique for your application, and kept secret)
-jhipster.security.rememberme.key: 0b5a2ab1820ad477af4224f2d73578923a6652ba
+jhipster.security.rememberme.key: 03129fa8a465511cddba35dfb2c45334eaa9d8a0
 
 async:
     corePoolSize: 2
@@ -17,14 +17,14 @@ liquibase:
 spring:
     datasource:
         dataSourceClassName: org.h2.jdbcx.JdbcDataSource
-        url: jdbc:h2:mem:schoolAPP;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:bachpan;DB_CLOSE_DELAY=-1
         databaseName:
         serverName:
         username:
         password:
 
     jpa:
-        database-platform: com.bachapan.domain.util.FixedH2Dialect
+        database-platform: com.bachpan.school.domain.util.FixedH2Dialect
         database: H2
         openInView: false
         show_sql: true

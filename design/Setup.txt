@@ -1,0 +1,13 @@
+1. Open the port at 3306 from window firewall seting--> Add the new rule to open the port
+2. mysqld --install to start the mysql server
+3. If it doesn't start then start it from window service
+4. create new user
+GRANT ALL PRIVILEGES ON dbTest.* To 'user'@'hostname' IDENTIFIED BY 'password';
+
+ set PASSWORD FOR 'schoolApp'@'*'=PASSWORD('admin');
+
+UPDATE mysql.user SET Password=PASSWORD('admin') WHERE User='schoolApp';
+FLUSH PRIVILEGES;
+
+Add Entity
+yo jhipster:entity Organization

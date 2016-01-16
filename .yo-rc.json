@@ -1,8 +1,8 @@
 {
   "generator-jhipster": {
-    "baseName": "schoolAPP",
-    "packageName": "com.bachapan",
-    "packageFolder": "com/bachapan",
+    "baseName": "bachpan",
+    "packageName": "com.bachpan.school",
+    "packageFolder": "com/bachpan/school",
     "authenticationType": "session",
     "hibernateCache": "ehcache",
     "clusteredHttpSession": "no",
@@ -10,12 +10,12 @@
     "databaseType": "sql",
     "devDatabaseType": "h2Memory",
     "prodDatabaseType": "mysql",
-    "searchEngine": "elasticsearch",
+    "searchEngine": "no",
     "useCompass": true,
     "buildTool": "gradle",
     "frontendBuilder": "grunt",
     "javaVersion": "8",
     "enableTranslation": false,
-    "rememberMeKey": "0b5a2ab1820ad477af4224f2d73578923a6652ba"
+    "rememberMeKey": "03129fa8a465511cddba35dfb2c45334eaa9d8a0"
   }
 }

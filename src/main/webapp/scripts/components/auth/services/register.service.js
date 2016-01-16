@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .factory('Register', function ($resource) {
         return $resource('api/register', {}, {
         });

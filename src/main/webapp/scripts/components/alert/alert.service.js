@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('schoolappApp')
+angular.module('bachpanApp')
     .factory('AlertService', function ($timeout, $sce) {
         var exports = {
             factory: factory,
